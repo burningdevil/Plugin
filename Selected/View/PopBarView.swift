@@ -41,7 +41,7 @@ struct PopBarView: View {
                     }
                 })
             }
-            SharingButton(message: ctx.Text)
+//            SharingButton(message: ctx.Text)
             if let res = calculate(ctx.Text) {
                 let v = valueFormatter.string(from: NSNumber(value: res))!
                 Text(v).fontWeight(.bold)

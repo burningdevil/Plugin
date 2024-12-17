@@ -157,6 +157,8 @@ let SupportedCmdCAppList: [String] = ["com.microsoft.VSCode",
                                       "com.microsoft.onenote.mac",
                                       "com.microsoft.Word",
                                       "com.microsoft.Powerpoint",
+                                      "com.microsoft.Teams",
+                                      "com.microsoft.teams2",
                                       "dev.zed.Zed",
                                       "dev.warp.Warp-Stable",
                                       "com.apple.iBooksX",
@@ -169,6 +171,8 @@ let copyableAppList: [String] = ["dev.warp.Warp-Stable",
                                  "com.microsoft.onenote.mac",
                                  "com.microsoft.Word",
                                  "com.microsoft.Powerpoint",
+                                 "com.microsoft.Teams",
+                                 "com.microsoft.teams2",
                                  "dev.zed.Zed"]
 
 func getSelectedTextBySimulateCommandC() -> String {

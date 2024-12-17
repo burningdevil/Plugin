@@ -241,54 +241,54 @@ class PluginManager: ObservableObject {
     var allActions: [PerformAction] {
         var list = [PerformAction]()
         list.append(WebSearchAction().generate(
-            generic: GenericAction(title: "Search", icon: "symbol:magnifyingglass", after: "", identifier: "selected.websearch")
+            generic: GenericAction(title: "Ask BitStrategy", icon: "₿", after: "", identifier: "selected.websearch")
         ))
         
-        let pluginList = plugins
-        NSLog("get all")
-        pluginList.forEach { Plugin in
-            if !Plugin.info.enabled {
-                return
-            }
-            Plugin.actions.forEach { Action in
-                var generic = Action.meta
-                generic.title = replaceOptions(content: generic.title, selectedText: "", options: Plugin.info.getOptionsValue())
-                
-                if let url = Action.url {
-                    list.append(url.generate(pluginInfo: Plugin.info, generic: generic))
-                    return
-                }
-                if let service = Action.service {
-                    list.append(service.generate(generic: generic))
-                    return
-                }
-                if let keycombo = Action.keycombo {
-                    list.append(keycombo.generate(pluginInfo: Plugin.info, generic: generic))
-                    return
-                }
-                if let gpt = Action.gpt {
-                    list.append(gpt.generate(pluginInfo: Plugin.info, generic: generic))
-                    return
-                }
-                if let script = Action.runCommand {
-                    list.append(script.generate(pluginInfo: Plugin.info, generic: generic))
-                    return
-                }
-            }
-        }
-        
-        list.append(TranslationAction(target: "cn").generate(
-            generic: GenericAction(title: "翻译到中文", icon: "square 译中", after: "", identifier: "selected.translation.cn")
-        ))
-        list.append(TranslationAction(target: "en").generate(
-            generic: GenericAction(title: "Translate to English", icon: "symbol:e.square", after: "", identifier: "selected.translation.en")
-        ))
-        list.append(CopyAction().generate(
-            generic: GenericAction(title: "Copy", icon: "symbol:doc.on.clipboard", after: "", identifier: "selected.copy")
-        ))
-        list.append(SpeackAction().generate(
-            generic: GenericAction(title: "Speak", icon: "symbol:play.circle", after: "", identifier: "selected.speak")
-        ))
+//        let pluginList = plugins
+//        NSLog("get all")
+//        pluginList.forEach { Plugin in
+//            if !Plugin.info.enabled {
+//                return
+//            }
+//            Plugin.actions.forEach { Action in
+//                var generic = Action.meta
+//                generic.title = replaceOptions(content: generic.title, selectedText: "", options: Plugin.info.getOptionsValue())
+//                
+//                if let url = Action.url {
+//                    list.append(url.generate(pluginInfo: Plugin.info, generic: generic))
+//                    return
+//                }
+//                if let service = Action.service {
+//                    list.append(service.generate(generic: generic))
+//                    return
+//                }
+//                if let keycombo = Action.keycombo {
+//                    list.append(keycombo.generate(pluginInfo: Plugin.info, generic: generic))
+//                    return
+//                }
+//                if let gpt = Action.gpt {
+//                    list.append(gpt.generate(pluginInfo: Plugin.info, generic: generic))
+//                    return
+//                }
+//                if let script = Action.runCommand {
+//                    list.append(script.generate(pluginInfo: Plugin.info, generic: generic))
+//                    return
+//                }
+//            }
+//        }
+//        
+//        list.append(TranslationAction(target: "cn").generate(
+//            generic: GenericAction(title: "翻译到中文", icon: "square 译中", after: "", identifier: "selected.translation.cn")
+//        ))
+//        list.append(TranslationAction(target: "en").generate(
+//            generic: GenericAction(title: "Translate to English", icon: "symbol:e.square", after: "", identifier: "selected.translation.en")
+//        ))
+//        list.append(CopyAction().generate(
+//            generic: GenericAction(title: "Copy", icon: "symbol:doc.on.clipboard", after: "", identifier: "selected.copy")
+//        ))
+//        list.append(SpeackAction().generate(
+//            generic: GenericAction(title: "Speak", icon: "symbol:play.circle", after: "", identifier: "selected.speak")
+//        ))
         
         return list
     }

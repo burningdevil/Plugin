@@ -42,7 +42,7 @@ struct Icon: View {
         
         let t = text.split(separator: " ")
         guard t.count == 2 else {
-            return AnyView(Image(systemName: "circle"))
+            return AnyView(Image(systemName: "bitcoinsign"))
         }
         
         let shape = String(t[0])
